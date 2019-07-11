@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produk;
 
 class HomeController extends Controller
 {
     public function layanan()
     {
-        return view('services');
+        $data['produks'] = Produk::all();
+        return view('services', $data);
     }
 
     public function fortofolio()

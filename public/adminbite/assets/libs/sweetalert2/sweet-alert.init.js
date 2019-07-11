@@ -19,7 +19,7 @@
 
     //Success Message
     $('#sa-success').click(function(){
-        swal("Good jobs!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.", "success")
+        swal("Thank You!", "Your message has been sent. We are happy for your suggestion", "success")
     });
 
     //Warning Message

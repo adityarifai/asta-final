@@ -54,7 +54,7 @@
                                     @foreach($produks as $prd)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $prd->picture }}</td>
+                                        <td><img style="width: 100px; height: 80px;" src='{{asset('picture_product/'.$prd->picture)}}'><br>{{ $prd->picture }}</td>
                                         <td>{{ $prd->produk }}</td>
                                         <td>{{ $prd->detail }}</td>
                                         <td>{{ $prd->teknologi }}</td>

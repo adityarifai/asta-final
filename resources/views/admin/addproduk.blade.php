@@ -35,42 +35,44 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card card-body">
-                    <h4 class="card-title">Add Product's</h4>
+                    <h4 class="card-title">Tambah Produk</h4>
                     <h5 class="card-subtitle"> Form Tambah Produk</h5>
-                    <form action="{{route('produk.save')}}" method="POST" role="form" class="form-horizontal m-t-30">
+                    <form action="{{route('produk.save')}}" method="POST" role="form" class="form-horizontal m-t-30" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Nama Product :<span class="help"> *</span></label>
+                            <label>Nama Produk :<span class="help"> *</span></label>
                             <input name="produk" type="text" class="form-control" placeholder="...">
                         </div>
                         <div class="form-group">
-                            <label for="example-email">Teknologi :<span class="help"> Misal. "Jenis/Bidang/Bahasa Pemrograman/Framework"</span></label>
+                            <label>
+                                Jenis :<br><small class="form-control-feedback">Misal. "Aplikasi/Bidang/Bahasa Pemrograman/Framework/Layanan/Acara"</small>
+                            </label>
                             <input name="teknologi" type="text" class="form-control" placeholder="...">
                         </div>
                         <div class="form-group">
-                            <label>Detail :<span class="help"> Misal. "Deskripsi/Catatan"</span></label>
-                            <textarea class="form-control" rows="5" name="detail"></textarea>
+                            <label>
+                                Detail :<br><small class="form-control-feedback">Misal. "Deskripsi/Catatan"</small>
+                            </label>
+                            <textarea class="form-control" rows="5" name="detail" placeholder="..."></textarea>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Tanggal Terlaksana</label>
                             <input name="tanggal" type="date" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>File Gambar :</label>
+                            <label>
+                                File Gambar :<br><small class="form-control-feedback">Max Ukuran : 2 MB<br>Tipe File : JPEG, JPG, PNG, SVG</small>
+                            </label>
                             <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
                                 <div class="custom-file">
-                                    <input name="picture" type="file" class="custom-file-input" id="inputGroupFile01">
-                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                    <input name="picture" type="file" class="form-file-input" id="inputGroupFile01">
                                 </div>
                             </div>
                         </div>
                         <div class="form-actions">
                             <div class="card-body">
                                 <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                                <a href="{{route('produk.all')}}" type="button" class="btn btn-dark">Cancel</a>
+                                <a href="{{route('produk.all')}}" type="button" class="btn btn-dark">Back</a>
                             </div>
                         </div>
                     </form>

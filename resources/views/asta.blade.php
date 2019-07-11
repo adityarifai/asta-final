@@ -12,6 +12,8 @@
   {{-- <link href="{{ asset('regna/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet"> --}}
   <link href="{{ asset('regna/lib/animate/animate.min.css')}}" rel="stylesheet">
   <link href="{{ asset('regna/css/style.css')}}" rel="stylesheet">
+  <link href="{{ asset('adminbite/assets/libs/sweetalert2/dist/sweetalert2.min.css')}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
   <!-- =======================================================
     Theme Name: Regna
     Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
@@ -19,231 +21,278 @@
     License: https://bootstrapmade.com/license/
     ======================================================= -->
     <style type="text/css">
-    @media screen and (min-width: 1200px) {
-      .containerr {
-        width: 1000px;
+
+
+      @-webkit-keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
       }
-      .homepage-offerings-menu-title{
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: uppercase;
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+
+      @-moz-keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
       }
-      .homepage-offerings-menu-tagline{
-        font-size: 26px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+
+      @keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
       }
-      .homepage-offerings-menu-tagline2{
-        font-size: 26px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+
+
+
+
+      @media screen and (min-width: 1200px) {
+        .containerr {
+          width: 1000px;
+        }
+        .homepage-offerings-menu-title{
+          font-weight: 700;
+          font-size: 16px;
+          text-transform: uppercase;
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline{
+          font-size: 26px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline2{
+          font-size: 26px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
       }
-    }
-    @media screen and (max-width: 1199px) {
-      .containerr {
-        width: 800px;
+      @media screen and (max-width: 1199px) {
+        .containerr {
+          width: 800px;
+        }
+        .homepage-offerings-menu-title{
+          font-weight: 700;
+          font-size: 18px;
+          text-transform: uppercase;
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline{
+          font-size: 23px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline2{
+          font-size: 23px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
       }
-      .homepage-offerings-menu-title{
-        font-weight: 700;
-        font-size: 18px;
-        text-transform: uppercase;
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      @media screen and (max-width: 900px) {
+        .containerr {
+          width: 700px;
+        }
+        .homepage-offerings-menu-title{
+          font-weight: 700;
+          font-size: 16px;
+          text-transform: uppercase;
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline{
+          font-size: 19px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline2{
+          font-size: 19px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
       }
-      .homepage-offerings-menu-tagline{
-        font-size: 23px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      @media screen and (max-width: 768px) {
+        .containerr {
+          /* max-width: 420px; */
+          width: 85%;
+        }
+        .homepage-offerings-menu-title{
+          font-weight: 700;
+          font-size: 12px;
+          text-transform: uppercase;
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline{
+          font-size: 14px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
+        .homepage-offerings-menu-tagline2{
+          font-size: 14px;
+          font-family:'Product Sans';
+          -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+        }
       }
-      .homepage-offerings-menu-tagline2{
-        font-size: 23px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings{
+        color: #ffffff;
+        font-size: 0px;
+        padding-bottom: 75px;
       }
-    }
-    @media screen and (max-width: 900px) {
-      .containerr {
-        width: 700px;
+      .homepage-offerings > div{
+        display: inline-block;
       }
-      .homepage-offerings-menu-title{
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: uppercase;
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings-menu{
+        text-align: left;
+        flex-direction: column;
+        display: inline-flex !important;
+        padding: 20px 0;
+        align-items: flex-start;
+        justify-content: center;
+        border: 2px solid #FCFCFC;
+        background-color: rgba(0,0,0,0.34);
+        /*-webkit-box-shadow: 8px 8px 12px -4px rgba(0,0,0,0.72);
+        -moz-box-shadow: 8px 8px 12px -4px rgba(0,0,0,0.72);
+        box-shadow: 8px 8px 12px -4px rgba(0,0,0,0.72);*/
       }
-      .homepage-offerings-menu-tagline{
-        font-size: 19px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings-menu2{
+        text-align: right;
+        flex-direction: column;
+        display: inline-flex !important;
+        padding: 20px 0;
+        align-items: flex-end;
+        justify-content: center;
+        border: 2px solid #FCFCFC;
+        background-color: rgba(0,0,0,0.34);
+        /*-webkit-box-shadow: 0px 8px 12px -4px rgba(0,0,0,0.72);
+        -moz-box-shadow: 0px 8px 12px -4px rgba(0,0,0,0.72);
+        box-shadow: 0px 8px 12px -4px rgba(0,0,0,0.72);*/
       }
-      .homepage-offerings-menu-tagline2{
-        font-size: 19px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings-menu:hover{
+        color: #80CCCC;
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.59);
       }
-    }
-    @media screen and (max-width: 768px) {
-      .containerr {
-        /* max-width: 420px; */
-        width: 85%;
+      .homepage-offerings-menu2:hover{
+        color: #80CCCC;
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.59);
       }
-      .homepage-offerings-menu-title{
-        font-weight: 700;
-        font-size: 12px;
-        text-transform: uppercase;
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings-menu2:first-child{
+        border-radius: 70px 0px 0px 70px;
+        border-right: 0px;
       }
-      .homepage-offerings-menu-tagline{
-        font-size: 14px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings-menu:last-child{
+        border-radius: 0px 70px 70px 0px;
       }
-      .homepage-offerings-menu-tagline2{
-        font-size: 14px;
-        font-family:'Product Sans';
-        -webkit-transition-duration: 1s;
-        transition-duration: 1s;
+      .homepage-offerings-menu:hover .homepage-offerings-menu-tagline{
+        -ms-transform: translateX(15px);
+        -webkit-transform: translateX(15px);
+        transform: translateX(15px);
       }
-    }
-    .homepage-offerings{
-      color: #dbdbdb;
-      font-size: 0px;
-      padding-bottom: 75px;
-    }
-    .homepage-offerings > div{
-      display: inline-block;
-    }
-    .homepage-offerings-menu{
-      text-align: left;
-      flex-direction: column;
-      display: inline-flex !important;
-      padding: 20px 0;
-      align-items: flex-start;
-      justify-content: center;
-      border: 2px solid #FCFCFC;
-      background-color: rgba(0,0,0,0.34);
-    }
-    .homepage-offerings-menu2{
-      text-align: right;
-      flex-direction: column;
-      display: inline-flex !important;
-      padding: 20px 0;
-      align-items: flex-end;
-      justify-content: center;
-      border: 2px solid #FCFCFC;
-      background-color: rgba(0,0,0,0.34);
-    }
-    .homepage-offerings-menu:hover{
-      color: #2dc997;
-      cursor: pointer;
-      background-color: rgba(0,0,0,0.59);
-    }
-    .homepage-offerings-menu2:hover{
-      color: #2dc997;
-      cursor: pointer;
-      background-color: rgba(0,0,0,0.59);
-    }
-    .homepage-offerings-menu2:first-child{
-      border-radius: 70px 0px 0px 70px;
-      border-right: 0px;
-    }
-    .homepage-offerings-menu:last-child{
-      border-radius: 0px 70px 70px 0px;
-    }
-    .homepage-offerings-menu:hover .homepage-offerings-menu-tagline{
-      -ms-transform: translateX(15px);
-      -webkit-transform: translateX(15px);
-      transform: translateX(15px);
-    }
-    .homepage-offerings-menu2:hover .homepage-offerings-menu-tagline2{
-      -ms-transform: translateX(-15px);
-      -webkit-transform: translateX(-15px);
-      transform: translateX(-15px);
-    }
-    .homepage-offerings-menu-tagline i{
-      padding-left: 15px;
-    }
-    .no-margin {
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-    .row {
-      margin-right: -15px;
-      margin-left: -15px;
-    }
-    .text-center {
-      text-align: center;
-    }
-    .col-md-6 {
-      width: 50%;
-    }
-    body {
-      overflow-x: hidden;
-    }
-    .homepage-offerings-menu-tagline2 {
-      display: inline-flex;
-      text-align: right;
-      text-indent: 40px;
-      padding-right: 20px;
-      margin-top: 20px;
-      position: relative;
-    }
-    .homepage-offerings-menu-tagline {
-      position: relative;
-    }
-    .homepage-offerings-menu-tagline2 i, .homepage-offerings-menu-tagline i {
-      position: absolute;
-      left: 0;
-      top: 0%;
-      transform: translateY(-50%) translateX(-10px);
-    }
-    .homepage-offerings-menu-tagline i {
-      left: auto;
-      right: 0;
-      transform: translate(-20px, -50%);
-    }
-    .homepage-offerings-menu2 .homepage-offerings-menu-title {
-      padding-right: 20px;
-    }
-    .homepage-offerings-menu .homepage-offerings-menu-tagline {
-      padding-left: 20px;
-      display: inline-flex;
-    }
-    .homepage-offerings-menu .homepage-offerings-menu-title {
-      padding-left: 20px;
-    }
-    .homepage-offerings-menu .homepage-offerings-menu-tagline {
-      margin-top: 20px;
-    }
-    @media screen and (min-width: 412px) {
-      .homepage-offerings-menu-tagline2, .homepage-offerings-menu .homepage-offerings-menu-tagline {
-        width: 100%;
+      .homepage-offerings-menu2:hover .homepage-offerings-menu-tagline2{
+        -ms-transform: translateX(-15px);
+        -webkit-transform: translateX(-15px);
+        transform: translateX(-15px);
+      }
+      .homepage-offerings-menu-tagline i{
+        padding-left: 15px;
+      }
+      .no-margin {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .col-md-6 {
+        width: 50%;
+      }
+      body {
+        overflow-x: hidden;
       }
       .homepage-offerings-menu-tagline2 {
-        justify-content: flex-end;
+        display: inline-flex;
+        text-align: right;
+        text-indent: 40px;
+        padding-right: 20px;
+        margin-top: 20px;
+        position: relative;
+      }
+      .homepage-offerings-menu-tagline {
+        position: relative;
       }
       .homepage-offerings-menu-tagline2 i, .homepage-offerings-menu-tagline i {
-        position: static;
-        transform: none;
-        line-height: 38px;
-        height: 38px;
+        position: absolute;
+        left: 0;
+        top: 0%;
+        transform: translateY(-50%) translateX(-10px);
       }
-    }
-  </style>
-</head>
+      .homepage-offerings-menu-tagline i {
+        left: auto;
+        right: 0;
+        transform: translate(-20px, -50%);
+      }
+      .homepage-offerings-menu2 .homepage-offerings-menu-title {
+        padding-right: 20px;
+      }
+      .homepage-offerings-menu .homepage-offerings-menu-tagline {
+        padding-left: 20px;
+        display: inline-flex;
+      }
+      .homepage-offerings-menu .homepage-offerings-menu-title {
+        padding-left: 20px;
+      }
+      .homepage-offerings-menu .homepage-offerings-menu-tagline {
+        margin-top: 20px;
+      }
+      @media screen and (min-width: 412px) {
+        .homepage-offerings-menu-tagline2, .homepage-offerings-menu .homepage-offerings-menu-tagline {
+          width: 100%;
+        }
+        .homepage-offerings-menu-tagline2 {
+          justify-content: flex-end;
+        }
+        .homepage-offerings-menu-tagline2 i, .homepage-offerings-menu-tagline i {
+          position: static;
+          transform: none;
+          line-height: 38px;
+          height: 38px;
+        }
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
   <!--==========================
   Header
   ============================-->
@@ -267,21 +316,21 @@
           <li><a href="#contact">Contact Us</a></li>
           @if(Auth::user())
           <li class="menu-has-children"><a href="#">Menu <i class="fa fa-chevron-down" style="padding-left: 5px;"></i></a>
-          <ul>
-            <li><a href="{{route('beranda')}}">Admin</a></li>
-            <li><a href="{{route('logout')}}" class="btn-get-started"  onclick="event.preventDefault();document.getElementById('logout-form').submit();" data-role="tile" class="slide bg-indigo fg-white">Logout</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"></li>
+            <ul>
+              <li><a href="{{route('beranda')}}">Admin</a></li>
+              <li><a href="{{route('logout')}}" class="btn-get-started"  onclick="event.preventDefault();document.getElementById('logout-form').submit();" data-role="tile" class="slide bg-indigo fg-white">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"></li>
+                </ul>
+              </li>
+              @csrf
+            </form>
+            @else()
+            <li><a href="{{route('login')}}" class="btn-get-started">Login</a></li>
+            @endif
           </ul>
-        </li>
-        @csrf
-      </form>
-      @else()
-      <li><a href="{{route('login')}}" class="btn-get-started">Login</a></li>
-      @endif
-    </ul>
-  </nav><!-- #nav-menu-container -->
-</div>
-</header><!-- #header -->
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header><!-- #header -->
 
   <!--==========================
     Hero Section
@@ -296,19 +345,19 @@
             <div class="homepage-offerings-menu2 col-md-6" onclick="window.location.href='#';">
               <div class="homepage-offerings-menu-title">Our Product</div>
               <div class="homepage-offerings-menu-tagline2"><i class="fa fa-angle-left" aria-hidden="true"></i> Ticket Travel &amp; Reservations</div>
-          </div>
-          <div class="homepage-offerings-menu col-md-6" onclick="window.location.href='{{route('layanan')}}';">
-            <div class="homepage-offerings-menu-title">Our Services</div>
-            <div class="homepage-offerings-menu-tagline">
-              Development &amp; Technology <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+            <div class="homepage-offerings-menu col-md-6" onclick="window.location.href='{{route('layanan')}}';">
+              <div class="homepage-offerings-menu-title">Our Services</div>
+              <div class="homepage-offerings-menu-tagline">
+                Development &amp; Technology <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section><!-- #hero -->
+    </section><!-- #hero -->
 
-  <main id="main">
+    <main id="main">
 
     <!--==========================
       About Us Section
@@ -457,7 +506,6 @@
             <a class="cta-btn align-middle" target="_blank" href="https://wa.me/628978177037?text=Saya%20ingin%20bekerja%20sama%20dengan%20Asta%20Multimedia%20Tama"><i style="padding-right: 5px;" class="fab fa-whatsapp"></i> Chat Me</a>
           </div>
         </div>
-
       </div>
     </section><!-- #call-to-action -->
     <!--==========================
@@ -528,7 +576,7 @@
                     <textarea class="form-control" name="pesan" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                     <div class="validation"></div>
                   </div>
-                  <div class="text-center"><button type="submit">Send Message</button></div>
+                  <div class="text-center"><button type="submit" alt="alert" id="sa-success">Send Message</button></div>
                 </form>
               </div>
             </div>
@@ -543,33 +591,52 @@
   <!--==========================
     Footer
     ============================-->
+    <section id="footer">
     <footer id="footer">
       <div class="container">
         <div class="copyright">&copy; Copyright 2019 by <strong>Asta Multimedia Tama</strong>. All Rights Reserved </div>
         <div class="credits">Designed by <a href="#">Asta</a> </div>
+        <div class="area" >
+          <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div >
       </div>
     </footer>
+    </section>
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <!-- JavaScript Libraries -->
-  <script src="https://kit.fontawesome.com/36430e2ebf.js"></script>
-  <script src="{{ asset('regna/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/easing/easing.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/wow/wow.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/waypoints/waypoints.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/counterup/counterup.min.js')}}"></script>
-  <script src="{{ asset('regna/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{ asset('regna/lib/superfish/superfish.min.js')}}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://kit.fontawesome.com/36430e2ebf.js"></script>
+    <script src="{{ asset('regna/lib/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/jquery/jquery-migrate.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/easing/easing.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/wow/wow.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/counterup/counterup.min.js')}}"></script>
+    <script src="{{ asset('regna/lib/superfish/hoverIntent.js')}}"></script>
+    <script src="{{ asset('regna/lib/superfish/superfish.min.js')}}"></script>
+
+    <script src="{{ asset('adminbite/assets/libs/sweetalert2/dist/sweetalert2.all.min.js')}}"></script>
+    <script src="{{ asset('adminbite/assets/libs/sweetalert2/sweet-alert.init.js')}}"></script>
 
 
-  <!-- Contact Form JavaScript File -->
-  <script src="{{ asset('regna/contactform/contactform.js')}}"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="{{ asset('regna/contactform/contactform.js')}}"></script>
 
-  <!-- Template Main Javascript File -->
-  <script src="{{ asset('regna/js/main.js')}}"></script>
+    <!-- Template Main Javascript File -->
+    <script src="{{ asset('regna/js/main.js')}}"></script>
 
 
-</body>
-</html>
+  </body>
+  </html>

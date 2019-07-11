@@ -51,9 +51,11 @@ class ProdukController extends Controller
             $new->picture = $name;
             $destinationPath = public_path('/picture_product');
             $image->move($destinationPath, $name);
+            $new->save();
+            return redirect()->route("produk.all");
+        }else {
+            return redirect()->back();
         }
-        $new->save();
-        return view('admin.produk');
     }
 
     /**
